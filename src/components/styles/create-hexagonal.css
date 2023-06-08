@@ -1,4 +1,4 @@
-.signin-container {
+.hexagonal-container {
     display: flex;
     justify-content: center;
     align-content: center;
@@ -6,7 +6,7 @@
     height: 100vh;
     background-color: #fff;
   }
-  .signin-container h2 {
+  .hexagonal-container h2 {
     font-weight: 700;
     color: #384047;
     text-align: center;
@@ -15,7 +15,7 @@
     margin-top: 10px;
   }
   
-  .sign-in-error {
+  .hexagonal-error {
     font-weight: 700;
     color: red;
     text-align: center;
@@ -57,7 +57,7 @@
   }
   
   @media only screen and (max-width: 600px) {
-    .signin-container {
+    .hexagonal-container {
       display: flex;
       justify-content: center;
       align-content: center;

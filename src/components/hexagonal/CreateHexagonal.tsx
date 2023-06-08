@@ -51,7 +51,7 @@ export const CreateHexagonal: React.FC = () => {
   };
 
   return (
-    <div className="signin-container">
+    <div className="hexagonal-container">
       <div className="form">
         <h2>Add Hexagon</h2>
         <div className="form-content">
@@ -89,15 +89,15 @@ export const CreateHexagonal: React.FC = () => {
             id="add_hexagonal_button"
           />
 
-          {error !== "" && <p className="sign-in-error">{error}</p>}
+          {error !== "" && <p className="hexagonal-error">{error}</p>}
           {hexagonalState.addHexagonalMessageError !== "" && (
-            <p className="sign-in-error">
+            <p className="hexagonal-error">
               {hexagonalState.addHexagonalMessageError}
             </p>
           )}
 
           {hexagonalState.addHexagonalMessage !== "" && (
-            <p className="sign-in-error">
+            <p className="hexagonal-error">
               {hexagonalState.addHexagonalMessage}
             </p>
           )}
