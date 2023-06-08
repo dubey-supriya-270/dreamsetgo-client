@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CreateHexagonal } from "./components/hexagonal/CreateHexagonal";
+import { HexagonalContextProvider } from "./contexts/Hexagonal";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { LoadingContextProvider } from "./contexts/Loading";
+import HexagonNeighbors from "./components/hexagonal/HexagonNeighbors";
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    //Provide the loading and user context to all routes.
+    <LoadingContextProvider>
+      <HexagonalContextProvider>
+        {/* Setup the routes */}
+        <Router>
+          <Switch>
+            {/* create hexagonal */}
+            <Route exact path="/create-hexagonal" component={CreateHexagonal} />
+
+            {/* hexagonal neighbor */}
+            <Route
+              exact
+              path="/hexagonal-neighbor/:hexagonalName"
+              render={({ match }) => (
+                <HexagonNeighbors hexagonalName={match.params.hexagonalName} />
+              )}
+            />
+          </Switch>
+        </Router>
+      </HexagonalContextProvider>
+    </LoadingContextProvider>
   );
-}
+};
 
 export default App;
