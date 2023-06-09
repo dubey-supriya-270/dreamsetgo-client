@@ -37,8 +37,8 @@ export const CreateHexagonal: React.FC = () => {
   const handleClick = () => {
     if (
       hexagonal.hexagonalName &&
-      hexagonal.borderNumber &&
-      hexagonal.neighborName
+      hexagonal.borderNumber 
+      // hexagonal.neighborName
     ) {
       addHexagon(
         hexagonal.hexagonalName,

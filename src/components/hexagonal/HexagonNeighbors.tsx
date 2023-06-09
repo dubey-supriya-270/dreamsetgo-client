@@ -9,7 +9,7 @@ interface Props {
 
 interface HexagonalNeighbor {
   border_number: number;
-  name: string;
+  neighbor_name: string;
 }
 const HexagonNeighbors: React.FC<Props> = ({ hexagonalName }) => {
   const [neighbors, setNeighbors] = useState<HexagonalNeighbor[]>([]);
@@ -37,8 +37,8 @@ const HexagonNeighbors: React.FC<Props> = ({ hexagonalName }) => {
       <h3>Neighbors of {hexagonalName}</h3>
       <ul>
         {neighbors?.map((neighbor) => (
-          <li key={neighbor.name}>
-            Border {neighbor.border_number}: {neighbor.name}
+          <li key={neighbor.neighbor_name}>
+            Border {neighbor.border_number}: {neighbor.neighbor_name}
           </li>
         ))}
       </ul>
